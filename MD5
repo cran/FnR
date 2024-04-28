@@ -1,0 +1,13 @@
+52dfe8c9a6aadab393d09d98f02e4419 *DESCRIPTION
+ed69277f490799b2a697e0b09fbb42be *NAMESPACE
+5d69691fa524d2fd0c923054a4ff3fad *R/calcR.R
+5099f457276a2a6d50bb44967ee0e401 *R/resume_inbreed.R
+c41a75178bbb5091e64aa3c24a0d140d *README.md
+9292a61c5b097517de46a2d788001d61 *build/vignette.rds
+4a27420e230d986dfdee073c14ceb507 *inst/doc/demo.R
+6a7fac818b954aa24a6715d682001e4a *inst/doc/demo.Rmd
+1215969a87e79c197cd5bd062d250472 *inst/doc/demo.html
+0c911ba184cbbe7d7976b1a026273aa8 *man/calcR.Rd
+5f5db9a7a9be7dd66034a96dd0e1e6be *man/resume_inbreed.Rd
+6a7fac818b954aa24a6715d682001e4a *vignettes/demo.Rmd
+1c92de98ff75e0c01340d54cc6c1d8b4 *vignettes/ped.PNG
