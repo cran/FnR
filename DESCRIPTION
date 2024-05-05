@@ -1,6 +1,6 @@
 Package: FnR
 Title: Inbreeding and Numerator Relationship Coefficients
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: 
     person("Mohammad Ali", "Nilforooshan", , "m.a.nilforooshan@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0339-5442"))
@@ -13,9 +13,9 @@ VignetteBuilder: knitr
 URL: https://github.com/nilforooshan/FnR
 BugReports: https://github.com/nilforooshan/FnR/issues
 NeedsCompilation: no
-Packaged: 2024-04-26 08:23:18 UTC; monil0
+Packaged: 2024-05-02 10:40:01 UTC; monil0
 Author: Mohammad Ali Nilforooshan [aut, cre]
     (<https://orcid.org/0000-0003-0339-5442>)
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-04-28 09:40:05 UTC
+Date/Publication: 2024-05-05 23:30:02 UTC

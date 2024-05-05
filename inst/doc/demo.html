@@ -367,37 +367,42 @@ and inbreeding (<code>f</code>) and <code>d</code> coefficients
 calculated and saved.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>oldped <span class="ot">&lt;-</span> ped[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, ]</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>(oldrun <span class="ot">&lt;-</span> <span class="fu">resume_inbreed</span>(oldped, <span class="at">export_d =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; $f</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; [1] 0 0 0 0 0 0 0 0 0</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; $d</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; [1] 1.00 1.00 1.00 0.50 0.50 1.00 0.50 0.50 0.75</span></span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; $f</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; [1] 0 0 0 0 0 0 0 0 0</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; $d</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; [1] 1.00 1.00 1.00 0.50 0.50 1.00 0.50 0.50 0.75</span></span></code></pre></div>
 <p>Calculating inbreeding coefficients as if <code>f</code> and
 <code>d</code> coefficients from the previous analysis are not
 available:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">resume_inbreed</span>(ped)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
 <p>Calculating inbreeding coefficients as if <code>f</code> coefficients
 from the previous analysis are available, but not <code>d</code>
 coefficients:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">resume_inbreed</span>(ped, <span class="at">f =</span> oldrun<span class="sc">$</span>f)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
 <p>Calculating inbreeding coefficients as if <code>f</code> and
 <code>d</code> coefficients from the previous analysis are
 available:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">resume_inbreed</span>(ped, <span class="at">f =</span> oldrun<span class="sc">$</span>f, <span class="at">d =</span> oldrun<span class="sc">$</span>d)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;  [1] 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;  [9] 0.000000 0.250000 0.015625 0.000000</span></span></code></pre></div>
 <p>Let’s calculate the numerator relationship coefficients between two
 groups of animals, one’s members not among dams, and the members of the
 other not among sires.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">calcR</span>(ped, <span class="at">set1 =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">6</span>), <span class="at">set2 =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">8</span>), <span class="at">type =</span> <span class="st">&quot;notdam-notsire&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt;           11     8</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; 12 0.3203125 0.375</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 6  0.3750000 0.500</span></span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;           11     8</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 12 0.3203125 0.375</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 6  0.3750000 0.500</span></span></code></pre></div>
 <p>What is the inbreeding coefficient of a future progeny of 11 and 12?
 It is half of the relationship coefficient between the two individuals
 (0.320312/2).</p>
@@ -409,16 +414,34 @@ used, respectively.</p>
 <p>Let’s calculate the numerator relationship coefficients between dam 7
 and dams 8 and 9.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">calcR</span>(ped, <span class="at">set1 =</span> <span class="dv">7</span>, <span class="at">set2 =</span> <span class="dv">8</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">type =</span> <span class="st">&quot;dam-dam&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;       8   9</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; 7 0.125 0.5</span></span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;       8   9</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; 7 0.125 0.5</span></span></code></pre></div>
 <p>The relationship coefficients between sires 2 &amp; 6 and sires 4
 &amp; 10 are calculated as:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">calcR</span>(ped, <span class="at">set1 =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>), <span class="at">set2 =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">10</span>), <span class="at">type =</span> <span class="st">&quot;sire-sire&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt;     4    10</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt; 2 0.5 0.125</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; 6 0.0 0.750</span></span></code></pre></div>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt;     4    10</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; 2 0.5 0.125</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt; 6 0.0 0.750</span></span></code></pre></div>
+<p>If inbreeding coefficients of the population or previous inbreeding
+estimates with a smaller pedigree are available, those can be used via
+the argument <code>f</code> to speed up the procedure. Similarly, if
+<strong>d</strong> coefficients are available, those can be used
+alongside the inbreeding coefficients via the argument
+<code>d</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>f[<span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>f[<span class="dv">11</span>] <span class="ot">&lt;-</span> <span class="fl">0.015625</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.5</span>, <span class="fl">0.4375</span>, <span class="fl">0.6875</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="fu">calcR</span>(ped, <span class="at">set1 =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>), <span class="at">set2 =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">10</span>), <span class="at">type =</span> <span class="st">&quot;sire-sire&quot;</span>, <span class="at">f =</span> f, <span class="at">d =</span> d)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; Estimating inbreeding coefficients based on Meuwissen and Luo (1992)</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; Calculating numerator relationship coefficients based on Van Vleck (2007)</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt;     4    10</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; 2 0.5 0.125</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; 6 0.0 0.750</span></span></code></pre></div>
 <p>For very large pedigree and small <code>set1</code> and
 <code>set2</code>, one may consider extracting a sub-pedigree by tracing
 the pedigree upward from <code>set1</code> and <code>set2</code>
